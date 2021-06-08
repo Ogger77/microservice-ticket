@@ -5,3 +5,4 @@
 /nats-test/node_modules
 /orders/node_modules
 /tickets/node_modules
+/payment/node_modules

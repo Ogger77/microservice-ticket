@@ -2,9 +2,8 @@ import mongoose = require("mongoose");
 
 import { app } from "./app";
 import { natsWrapper } from "./nats-wrapper";
-import { TicketCreatedListener } from "./events/listener/ticket-created-listener";
-import { TicketUpdatedListener } from "./events/listener/ticket-updated-listener";
-import { ExpirationCompleteListener } from "./events/listener/expiration-complete-listener";
+import { OrderCancelledListener } from "./events/listeners/order-cancelled-listener";
+import { OrderCreatedListener } from "./events/listeners/order-created-listener";
 
 const start = async () => {
   if (!process.env.JWT_KEY) {
@@ -37,9 +36,8 @@ const start = async () => {
     process.on("SIGINT", () => natsWrapper.client.close());
     process.on("SIGTERM", () => natsWrapper.client.close());
 
-    new TicketCreatedListener(natsWrapper.client).listen();
-    new TicketUpdatedListener(natsWrapper.client).listen();
-    new ExpirationCompleteListener(natsWrapper.client).listen();
+    new OrderCreatedListener(natsWrapper.client).listen();
+    new OrderCancelledListener(natsWrapper.client).listen();
 
     await mongoose.connect(process.env.MONGO_URI, {
       useNewUrlParser: true,
