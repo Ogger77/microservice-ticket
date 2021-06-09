@@ -5,6 +5,7 @@ import "express-async-errors";
 import { json } from "body-parser";
 
 import { errorHandler, NotFoundError, currentUser } from "@oggerticket/common";
+import { createChargeRouter } from "./routes/new";
 
 const app = express();
 app.set("trust proxy", true);
@@ -17,6 +18,7 @@ app.use(
 );
 
 app.use(currentUser);
+app.use(createChargeRouter);
 
 app.all("*", async (req, res) => {
   throw new NotFoundError();
