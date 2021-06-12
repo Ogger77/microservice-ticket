@@ -20,6 +20,6 @@ jobs:
       - run: docker push ogger/auth
       - uses: digitalocean/action-doctl@v2
         with:
-          token: ${{ secrets.DIGITAL_ACCESS_TOKEN }}
+          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
       - run: doctl kubernetes cluster kubeconfig save ticketing
       - run: kubectl rollout restart deployment auth-depl
