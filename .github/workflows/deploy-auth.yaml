@@ -4,15 +4,15 @@ on:
     branches:
       - main
     paths:
-      - 'auth/**'
-  
+      - "auth/**"
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run:  cd auth && docker build -t ogger/auth .
-      - run: docker login -u $DOCKER_NAME -p $DOCKER_PASSWORD
+      - run: cd auth && docker build -t ogger/auth .
+      - run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
         env:
           key:
             DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
