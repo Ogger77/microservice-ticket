@@ -6,15 +6,15 @@ on:
     paths:
       - 'auth/**'
   
-  jobs:
-    build:
-      runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@v2
-        - run:  cd auth && docker build -t ogger/auth .
-        - run: docker login -u $DOCKER_NAME -p $DOCKER_PASSWORD
-          env:
-            key:
-              DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-              DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-        - run: docker push ogger/auth
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run:  cd auth && docker build -t ogger/auth .
+      - run: docker login -u $DOCKER_NAME -p $DOCKER_PASSWORD
+        env:
+          key:
+            DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+            DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+      - run: docker push ogger/auth
