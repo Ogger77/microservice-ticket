@@ -4,6 +4,7 @@ import request = require("supertest");
 import { app } from "../app";
 
 //declare global singin function
+console.log('test');
 declare global {
   namespace NodeJS {
     interface Global {
