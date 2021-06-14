@@ -3,7 +3,7 @@ import mongoose = require("mongoose");
 import { app } from "./app";
 
 const start = async () => {
-  console.log("Starting up do...................asdasd");
+  console.log("Starting up do...................asdasdasdasd");
   console.log("new");
 
   if (!process.env.JWT_KEY) {
