@@ -77,3 +77,10 @@ spec:
     app.kubernetes.io/name: ingress-nginx
     app.kubernetes.io/instance: ingress-nginx
     app.kubernetes.io/component: controller
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ticketing
+data:
+  SERVER_URL_BASE: "http://vudo.store/"
