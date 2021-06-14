@@ -4,7 +4,7 @@ export default ({ req }) => {
   if (typeof window === "undefined") {
     // on server
     return axios.create({
-      baseURL: process.env.URL,
+      baseURL: process.env.SEVER_URL_BASE,
       headers: req.headers,
     });
   } else {
