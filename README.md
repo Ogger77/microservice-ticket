@@ -4,13 +4,13 @@
 ![Build Status](http://img.shields.io/travis/badges/badgerbadgerbadger.svg?style=flat-square)
 ![version](https://img.shields.io/badge/version-2.0.0-blue?style=flat-square)
 
-A simple ticketing web app that alow user to sell and reserved a ticket.
-Built with microservice system utilize Docker and Kubernetes.
+A simple ticketing web app that alow user to sell and reserved a ticket.  
+Built with microservice system utilize Docker and Kubernetes.  
 Based on the tutorial of Stephen Grider.
 
 ## Getting Started
 
-You need [Docker](https://www.docker.com/) and [Kuberbetes] enable on your machine.
+You need [Docker](https://www.docker.com/) and [Kuberbetes] enable on your machine.  
 Using [Skaffold](https://skaffold.dev/) for automate pushing and deploying of Docker image.
 
 ### Installing
@@ -27,7 +27,7 @@ skaffold dev
 
 ## Deployment
 
-This demo run on http. To pass by the unsafe check, type 'thisisunsafe' with Chrome browser
+This demo run on http. To pass by the unsafe check, type 'thisisunsafe' with Chrome browser.  
 Live demo-version is up on [Digital Oceans](http://www.vudo.store/)
 
 ## Built With
